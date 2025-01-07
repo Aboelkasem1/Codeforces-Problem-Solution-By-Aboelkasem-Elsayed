@@ -66,19 +66,20 @@ void iofile()
 
 void solve()
 {
-    int q; cin >> q;
-    string s;
+    int n, k; cin >> n >> k;
 
-    for (int i = 0; i < q; ++i) {
-       cin >> s;
+    vi a(n); in(a);
+    int count = 0;
 
-       if (s.size() > 10)
-       {
-            cout << s[0] << s.size()-2 << s[s.size()-1] << "\n";
-       }
-       else
-       {
-            cout << s << "\n";
-       }
+    sort(a.rbegin(), a.rend());
+
+    FORALL(i, a)
+    {
+        if (i >= a[k-1] && i != 0)
+        {
+            count++;
+        }
     }
+
+    cout << count << "\n";
 }

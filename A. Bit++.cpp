@@ -67,18 +67,24 @@ void iofile()
 void solve()
 {
     int q; cin >> q;
+    
     string s;
 
-    for (int i = 0; i < q; ++i) {
-       cin >> s;
+    int sum = 0;
 
-       if (s.size() > 10)
-       {
-            cout << s[0] << s.size()-2 << s[s.size()-1] << "\n";
-       }
-       else
-       {
-            cout << s << "\n";
-       }
+    for (int i = 0; i < q; i++)
+    {
+        cin >> s;
+
+        if (s == "X++" || s == "++X")
+        {
+            sum++;
+        }
+        else
+        {
+            sum--;
+        }
+        
+        
     }
 }
