@@ -1,0 +1,141 @@
+#include <bits/stdc++.h>
+#include <cmath>
+using namespace std;
+
+#define ll                  long long
+#define ld                  long double
+#define ull                 unsigned long long
+#define PI                  3.1415926535897932384626
+#define vi                  vector<int>
+#define vc                  vector<char>
+#define vs                  vector<string>
+#define vll                 vector<long long>
+#define vb                  vector<bool>
+#define vvi                 vector<vector<int> >
+#define pb                  push_back
+#define pf                  push_front
+#define ppb                 pop_back
+#define ppf                 pop_front
+#define eb                  emplace_back
+#define mp(a, b)            make_pair(a, b)
+#define pii                 pair<int, int>
+#define vpii                vector<pair<int, int> >
+#define mk(arr, n, type)    type *arr = new type[n];
+#define FOR(i, a, b)        for (int(i) = (a); (i) <= (b); ++(i))
+#define RFOR(i, a, b)       for (int(i) = (a)-1; (i) >= (b); --(i))
+#define FORALL(i, a)        for (auto& (i) : (a))
+#define printall(a)         for (auto& (i) : (a)) cout << i << ' '
+#define in(a)               for (auto& (i) : (a)) cin >> i
+#define icin(x)             int x; cin >> x
+#define print(a)            cout << a << '\n'
+#define rsort(a)            sort((a).rbegin(), (a).rend())
+#define w(x)                int x; cin >> x; while(x--)
+#define all(c)              (c).begin(), (c).end()
+#define sz(c)               (int)(c).size()
+#define pqmx                priority_queue<int>
+#define pqmn                priority_queue<int, vector<int>, greater<int> >
+#define max3(a, b, c)       max((a), max((b), (c)))
+#define min3(a, b, c)       min((a), min((b), (c)))
+#define mx_all(c)           *max_element((c).begin(), (c).end())
+#define mn_all(c)           *min_element((c).begin(), (c).end())
+#define lwr_b(c, a)         lower_bound((c).begin(), (c).end(), (a)) - ((c).begin())
+#define upr_b(c, a)         upper_bound((c).begin(), (c).end(), (a)) - ((c).begin())
+#define FIO                 ios::sync_with_stdio(false); cin.tie(nullptr);
+
+
+struct Node
+{
+    int val;
+    Node* next;
+};
+
+ll k;
+ll n;
+ll sum;
+
+
+void iofile();
+void solve();
+
+int main()
+{
+    iofile();
+
+    // w(t)
+    // {
+    //     solve();
+    // }
+
+    solve();
+}
+
+void iofile()
+{
+    FIO
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+#endif
+}
+
+//bool good (int med,ll a[],ll b[])
+// {
+//     for (int i = 0; i < n; i++)
+//     {
+//         ll res = a[i] * med;
+//         if (res > b[i]+k)
+//         {
+//             return false;
+//         }
+//     }
+//
+//     return true;
+//
+//     /////////////////////////////
+//     cin >> n >> k;
+//
+//     ll a[n], b[n];
+//
+//     int l = 0, r = 2e9, ans = 0;
+//
+//     while (l <= r)
+//     {
+//         int med = (l + r) / 2;
+//
+//         if (good(med, a, b))
+//         {
+//             ans = med;
+//             r = med - 1;
+//         }
+//         else
+//         {
+//             l = med + 1;
+//         }
+//     }
+//
+//     cout << ans << "\n";
+// }
+
+void solve()
+{
+    cin >> n >> k;
+
+    vi a(n); in(a);
+    int count = 0;
+
+    sort(a.rbegin(), a.rend());
+
+    FORALL(i, a)
+    {
+        if (i >= a[k-1] && i != 0)
+        {
+            count++;
+        }
+    }
+
+
+    cout << count << "\n";
+}
+
+
+ 
